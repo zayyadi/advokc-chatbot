@@ -1,51 +1,33 @@
-# advokc-chatbot
+# ADVOKC Civic-Tech AI Chatbot
 
-# ADVOKC Civic-tech AI Chatbot (Open-Source LLM Edition)
+This project is a civic-tech AI chatbot for ADVOKC, designed to answer civic-related queries in Nigeria, track government promises, and provide details about ADVOKC’s advocacy efforts.
 
-An open-source AI chatbot designed to provide civic education, track government promises, and disseminate information about ADVOKC’s advocacy activities in Nigeria.
+## Project Overview
 
-## ✨ Features
+*   **AI Chatbot:** Powered by an open-source LLM (e.g., LLaMA 3, Mistral 7B) using a RAG pipeline with LangChain.
+*   **Knowledge Base:** Utilizes Nigerian civic legal frameworks, campaign promises, and ADVOKC's activity data.
+*   **Promise Tracking:** Features a module to monitor the status of political promises.
+*   **Tech Stack:** FastAPI (backend), React/Next.js (frontend), ChromaDB (vector store), PostgreSQL (database).
 
-- AI-generated civic information using open-source LLaMA 3 / Mistral
-- Retrieval-augmented generation for verifiable responses
-- Promise tracking by political leaders and institutions
-- ADVOKC project and event information
-- Natural language interface
-- Web-based frontend with optional WhatsApp integration
-
-## 📌 Architecture
-
-- **LLM:** LLaMA 3 (Meta) / Mistral 7B via Hugging Face
-- **Embedding Model:** Instructor-Embeddings / SentenceTransformers
-- **Vector Database:** ChromaDB (local, self-hosted)
-- **Backend:** FastAPI
-- **Frontend:** React.js / Next.js
-- **Deployment:** Railway / Render / DigitalOcean (GPU support)
-
-## 📂 Project Structure
-
-advokc_chatbot/
-├── backend/
-│ ├── app/
-│ ├── rag/
-│ │ ├── model_loader.py
-│ │ ├── embedder.py
-│ │ ├── retriever.py
-│ │ └── chatbot.py
-│ ├── data/
-│ └── main.py
-├── frontend/
-│ └── (React-based chat UI)
-├── vector_store/
-├── README.md
-└── requirements.txt
-
-
-## 📥 Setup Instructions
+## Getting Started
 
 ### Backend Setup
 
-1. Install dependencies:
-
-```bash
-pip install -r requirements.txt
+1.  **Navigate to the backend directory:**
+    ```bash
+    cd backend
+    ```
+2.  **Create a virtual environment (recommended):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Run the FastAPI application:**
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+    The application will typically be available at `http://127.0.0.1:8000`.
